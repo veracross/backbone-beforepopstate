@@ -1,6 +1,6 @@
 # backbone-beforepopstate
 
-**Version 0.9.0**
+**Version 0.9.1**
 
 A small small extension to backbone.js v0.9-1.0 that adds `beforepopstate` and
 `beforepushstate` handlers that work like `beforeunload`. As a bonus, adds a

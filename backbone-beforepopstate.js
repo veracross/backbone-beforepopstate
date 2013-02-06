@@ -1,5 +1,5 @@
 /*!
- * backbone-beforepopstate v0.9.0
+ * backbone-beforepopstate v0.9.1
  * https://github.com/veracross/backbone-beforepopstate
  *
  * Requires jQuery, tested with 1.7 and 1.8
@@ -7,7 +7,7 @@
  * Copyright 2012-2013 Will Bond, Breuer & Co LLC <wbond@breuer.com>
  * Released under the MIT license
  *
- * Date: 2013-2-4
+ * Date: 2013-2-6
  */
 
 // Replaces the original checkUrl with one that runs beforepopstate event
