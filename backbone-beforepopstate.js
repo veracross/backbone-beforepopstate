@@ -20,7 +20,7 @@ Backbone.History.prototype.checkUrl = function(e) {
   var confirmSuffix = "\n\nAre you sure you want to leave this page?";
 
   // If there are beforepopstate handlers, continue as normal
-  var events = $(window).data('events') || $._data($(window)[0], 'events');
+  var events = jQuery(window).data('events') || jQuery._data(jQuery(window)[0], 'events');
   if (!events || !events.beforepopstate || this._pushHistory.length == 0) {
     return this._originalCheckUrl(e);
   }
@@ -68,7 +68,7 @@ Backbone.History.prototype.navigate = function(fragment, options) {
   var confirmSuffix = "\n\nAre you sure you want to leave this page?";
 
   // If there are beforepushstate handlers, continue as normal
-  var events = $(window).data('events') || $._data($(window)[0], 'events');
+  var events = jQuery(window).data('events') || jQuery._data(jQuery(window)[0], 'events');
   var cancelled = false;
   if (events && events.beforepushstate && this._pushHistory.length > 0) {
     // Try each beforepushstate handler, retrieving the text
@@ -103,7 +103,7 @@ Backbone.History.prototype._triggerPushState = function(fragment, options) {
   var events, cont, i, e;
   result = this._originalNavigate(fragment, options);
 
-  events = $(window).data('events') || $._data($(window)[0], 'events');
+  events = jQuery(window).data('events') || jQuery._data(jQuery(window)[0], 'events');
   if (events && events.pushstate) {
     e = {
       bubbles: false,
@@ -139,7 +139,7 @@ Backbone.History.prototype.start = function(options) {
   // pushstate, onbeforepushstate and onbeforepopstate. The fragment will be
   // set to false for the initial popstate event that chrome and safari trigger
   // when first loading a page.
-  $(window).on('popstate', function(e) {
+  jQuery(window).on('popstate', function(e) {
     var fragment = history._pushHistory[history._pushHistory.length - 1];
     // The state is null for the default popstate event that chrome and safari
     // trigger on page load
@@ -153,7 +153,7 @@ Backbone.History.prototype.start = function(options) {
   
   // This prevents the popstate event handler from calling any handlers after
   // the one that backbone uses to fire navigation
-  $(window).on('popstate', function(e) {
+  jQuery(window).on('popstate', function(e) {
     if (history._popCancelled) {
       e.stopImmediatePropagation();
       e.stopPropagation();
