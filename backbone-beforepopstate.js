@@ -162,3 +162,6 @@ Backbone.History.prototype.start = function(options) {
     }
   });
 };
+
+Backbone._originalDefaultHistory = Backbone.history;
+Backbone.history = new Backbone.History;
