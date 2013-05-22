@@ -1,16 +1,23 @@
 # backbone-beforepopstate
 
-**Version 0.9.1**
+**Version 1.0.0**
 
-A small small extension to backbone.js v0.9-1.0 that adds `beforepopstate` and
+A small small extension to backbone.js v1.0 that adds `beforepopstate` and
 `beforepushstate` handlers that work like `beforeunload`. As a bonus, adds a
 `pushstate` event that fires when a URL is pushed onto the history stack.
 
+This extension has been tested with jQuery 1.7-1.9 and Backbone.js 1.0.
+
 ## Installation
 
-Load `backbone-beforepopstate.js` after loading backbone.js and jQuery.
+Load `backbone-beforepopstate.js` after loading Backbone.js and jQuery. Once
+loaded, call:
 
-This extension has been tested with jQuery 1.7 and 1.8.
+```
+Backbone.addBeforePopState(Backbone);
+```
+
+You may alternatively pass in a `noConflict()` version instead of `Backbone`.
 
 ## Usage
 
