@@ -34,7 +34,7 @@ var unloadHandler = function(e) {
 
 // Added by backbone-beforepopstate
 $(window).on('beforepopstate', unloadHandler);
-$(window).on('beforeushstate', unloadHandler);
+$(window).on('beforepushstate', unloadHandler);
 
 // Native unload handler
 $(window).on('beforeunload', unloadHandler);
