@@ -71,7 +71,7 @@ Backbone.addBeforePopState = function(BB) {
     // If there are beforepushstate handlers, continue as normal
     var events = jQuery(window).data('events') || jQuery._data(jQuery(window)[0], 'events');
     var cancelled = false;
-    if (events && events.beforepushstate && BB.history._pushHistory.length > 0) {
+    if (events && events.beforepushstate) {
       // Try each beforepushstate handler, retrieving the text
       // and then checking with the user
       for (var i = 0; i < events.beforepushstate.length; i++) {
